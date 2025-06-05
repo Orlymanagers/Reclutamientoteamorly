@@ -1,27 +1,22 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta http-equiv="refresh" content="0">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redirección automática</title>
   <script>
     const grupos = [
-      "https://chat.whatsapp.com/HsaBuLsrdPO4V21yjIQv47",
-      "https://chat.whatsapp.com/LgnVlowLUYT9cZae0bEI5V",
-      "https://chat.whatsapp.com/D4qSliHepxsEVmCFHm7fZK",
-      "https://chat.whatsapp.com/KFm5iHFYDgdA5RJ7LXWddZ",
+      "https://chat.whatsapp.com/LGWAZmg40B3Ekvn0KALHIq", // Grupo 1
+      "https://chat.whatsapp.com/Jp4tcPTqWh4DqlrmxnP2TR", // Grupo 2
+      "https://chat.whatsapp.com/I6n46y08RJvC3iwmtxsGbX", // Grupo 3
+      "https://chat.whatsapp.com/Hrn0KsCAAYQF0aRBDMJCKF"  // Grupo 4
     ];
-    const now = new Date();
-    const utcMinute = now.getUTCMinutes();
-    const utcHour = now.getUTCHours();
-    const vzlaHour = (utcHour - 4 + 24) % 24;
-    const minute = utcMinute;
-    const grupoIndex = minute % 5;
-    window.location.href = grupos[grupoIndex];
+    const minuto = new Date().getMinutes();
+    const index = minuto % grupos.length;
+    window.location.href = grupos[index];
   </script>
+  <title>Redireccionando...</title>
 </head>
 <body>
-  <p>Redirigiendo al grupo de WhatsApp correspondiente...</p>
+  <p>Redireccionando al grupo correspondiente...</p>
 </body>
 </html>
